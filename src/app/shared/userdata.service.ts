@@ -8,15 +8,15 @@ export class UserdataService {
   constructor() { }
 
   public setData(userdata){
-    sessionStorage.setItem("username",userdata.username)
+    localStorage.setItem("username",userdata.token)
   }
   
   public getData(){
-    return sessionStorage.getItem("username")
+    return localStorage.getItem("username")
   }
 
   public removeData(){
-    sessionStorage.removeItem("username")
+    localStorage.removeItem("username")
   }
 
 }

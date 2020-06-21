@@ -1,5 +1,6 @@
-import { BrowserModule } from '@angular/platform-browser';
+  import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,9 @@ import { UserComponent } from './user/user.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AddareaComponent } from './area/addarea/addarea.component';
+import { EditareaComponent } from './area/editarea/editarea.component';
+import { ListareaComponent } from './area/listarea/listarea.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +29,17 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     TablePageComponent,
     UserComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AddareaComponent,
+    EditareaComponent,
+    ListareaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
