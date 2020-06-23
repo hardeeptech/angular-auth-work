@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <form #form='ngForm' (submit)="onsubmit()">
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label for="State">State</label>
+                    <input type="text" #State="ngModel" name="State" [(ngModel)]="formModel.State" class="form-control" required>
+                    <div *ngIf="State.invalid && (State.touched || State.dirty)">
+                        <div *ngIf="State.errors.required">Enter Value</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

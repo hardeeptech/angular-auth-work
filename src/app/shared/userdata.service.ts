@@ -9,10 +9,15 @@ export class UserdataService {
 
   public setData(userdata){
     localStorage.setItem("username",userdata.token)
+    localStorage.setItem("name",userdata.name)
   }
   
   public getData(){
     return localStorage.getItem("username")
+  }
+
+  public getName(){
+    return localStorage.getItem("name")
   }
 
   public removeData(){

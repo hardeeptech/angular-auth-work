@@ -10,6 +10,7 @@ export class AreaserviceService {
 
   BaseURI = ''
   Token = ''
+  
   constructor(private http: HttpClient, @Inject('BASE_URL') _baseUrl: string, private userdata: UserdataService) { 
     this.BaseURI = _baseUrl
     this.Token = userdata.getData()
@@ -39,4 +40,5 @@ export class AreaserviceService {
     var headers_object = new HttpHeaders().set("Authorization", "Bearer " + this.Token);
     return this.http.delete(this.BaseURI + "/areacrud/DeleteArea?id="+inchargeId, {headers: headers_object})
   }
+
 }

@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row">
+        <form [formGroup]="formGroup" (submit)="onsubmit()">
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="groupname">Group Name</label>
+                    <input type="text" id="groupname" formControlName="GroupName" class="form-control">
+                    <div *ngIf="f.GroupName.invalid && (f.GroupName.touched || f.GroupName.dirty)">
+                        <div *ngIf="f.GroupName.errors.required">Enter Value</div>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="BadgeId">Badge Id</label>
+                    <input type="text" id="BadgeId" formControlName="BadgeId" class="form-control">
+                    <div *ngIf="f.BadgeId.invalid && (f.BadgeId.touched || f.BadgeId.dirty)">
+                        <div *ngIf="f.BadgeId.errors.required">Enter Value</div>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="State">State</label>
+                    <input type="text" id="State" formControlName="State" class="form-control">
+                    <div *ngIf="f.State.invalid && (f.State.touched || f.State.dirty)">
+                        <div *ngIf="f.State.errors.required">Enter Value</div>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="BadgeType">Badge Type</label>
+                    <input type="text" id="BadgeType" formControlName="BadgeType" class="form-control">
+                    <div *ngIf="f.BadgeType.invalid && (f.BadgeType.touched || f.BadgeType.dirty)">
+                        <div *ngIf="f.BadgeType.errors.required">Enter Value</div>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="Email">Email</label>
+                    <input type="text" id="Email" formControlName="Email" class="form-control">
+                    <div *ngIf="f.Email.invalid && (f.Email.touched || f.Email.dirty)">
+                        <div *ngIf="f.Email.errors.required">Enter Value</div>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="Mobile">Mobile</label>
+                    <input type="text" id="Mobile" formControlName="Mobile" class="form-control">
+                    <div *ngIf="f.Mobile.invalid && (f.Mobile.touched || f.Mobile.dirty)">
+                        <div *ngIf="f.Mobile.errors.required">Enter Value</div>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="Photo">Photo</label>
+                    <input type="file" (change)="onChange($event)" id="Photo" formControlName="Photo" class="form-control">
+                    <div *ngIf="f.Photo.invalid && (f.Photo.touched || f.Photo.dirty)">
+                        <div *ngIf="f.Photo.errors.required">Enter Value</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <button type="submit" [disabled]="!formGroup.valid" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="container">
+    <form [formGroup]="formGroup" (submit)="onsubmit()">
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>Group Name</label>
+                <input type="text" name="GroupName" class="form-control" formControlName="GroupName">
+                <div *ngIf="f.GroupName.invalid && (f.GroupName.dirty || f.GroupName.touched)">
+                    <div *ngIf="f.GroupName.errors.required">Invalid Value</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>Group Name</label>
+                <input type="text" name="GroupName" class="form-control" formControlName="GroupName">
+                <div *ngIf="f.GroupName.invalid && (f.GroupName.dirty || f.GroupName.touched)">
+                    <div *ngIf="f.GroupName.errors.required">Invalid Value</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>Group Name</label>
+                <input type="text" name="GroupName" class="form-control" formControlName="GroupName">
+                <div *ngIf="f.GroupName.invalid && (f.GroupName.dirty || f.GroupName.touched)">
+                    <div *ngIf="f.GroupName.errors.required">Invalid Value</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>Group Name</label>
+                <input type="text" name="GroupName" class="form-control" formControlName="GroupName">
+                <div *ngIf="f.GroupName.invalid && (f.GroupName.dirty || f.GroupName.touched)">
+                    <div *ngIf="f.GroupName.errors.required">Invalid Value</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>Group Name</label>
+                <input type="text" name="GroupName" class="form-control" formControlName="GroupName">
+                <div *ngIf="f.GroupName.invalid && (f.GroupName.dirty || f.GroupName.touched)">
+                    <div *ngIf="f.GroupName.errors.required">Invalid Value</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>Group Name</label>
+                <input type="text" name="GroupName" class="form-control" formControlName="GroupName">
+                <div *ngIf="f.GroupName.invalid && (f.GroupName.dirty || f.GroupName.touched)">
+                    <div *ngIf="f.GroupName.errors.required">Invalid Value</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>Group Photo</label>
+                <input type="file" name="Photo" class="form-control" (change)="onFile($event)" formControlName="Photo">
+                <div *ngIf="f.Photo.invalid && (f.Photo.dirty || f.Photo.touched)">
+                    <div *ngIf="f.Photo.errors.required">Invalid Value</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <button type="submit" class="btn btn-primary" [disabled]="!formGroup.valid">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

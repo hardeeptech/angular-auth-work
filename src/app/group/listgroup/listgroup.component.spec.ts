@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddareaComponent } from './addarea.component';
+import { ListgroupComponent } from './listgroup.component';
 
-describe('AddareaComponent', () => {
-  let component: AddareaComponent;
-  let fixture: ComponentFixture<AddareaComponent>;
+describe('ListgroupComponent', () => {
+  let component: ListgroupComponent;
+  let fixture: ComponentFixture<ListgroupComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddareaComponent ]
+      declarations: [ ListgroupComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddareaComponent);
+    fixture = TestBed.createComponent(ListgroupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
