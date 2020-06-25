@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { UserserviceService } from 'src/app/shared/user/userservice.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
+import { JsService } from 'src/app/shared/js/js.service';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,8 @@ export class LoginComponent implements OnInit {
   constructor(private userdata: UserdataService, private router: Router,
      private userservice: UserserviceService,
      private toast: ToastrService,
-     private ngxService: NgxUiLoaderService) { }
+     private ngxService: NgxUiLoaderService,
+     private js: JsService) { }
 
   ngOnInit(): void {
     if(this.userdata.getData() != null){
@@ -38,7 +40,10 @@ export class LoginComponent implements OnInit {
       (res: any) => {
         this.ngxService.stop()
         this.toast.success('Login Successfully','Success')
+        
+        this.js.callJsClass()
         this.userdata.setData(res)
+        
         this.router.navigateByUrl('layout/dashboard')
       },
       err => {

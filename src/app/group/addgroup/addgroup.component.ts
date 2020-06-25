@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { GroupService } from 'src/app/shared/group/group.service';
 
 @Component({
   selector: 'app-addgroup',
@@ -18,7 +19,7 @@ export class AddgroupComponent implements OnInit {
     BadgeType: new FormControl('', [Validators.required]),
   })
 
-  constructor() { }
+  constructor(private group: GroupService) { }
 
   ngOnInit(): void {
   }
@@ -40,7 +41,20 @@ export class AddgroupComponent implements OnInit {
     const data = new FormData()
     data.append("GroupName",this.formGroup.get("GroupName").value)
     data.append("Photo",this.formGroup.get("Photo").value)
-    data.append("GroupName",this.formGroup.get("GroupName").value)
+    data.append("BadgeId",this.formGroup.get("BadgeId").value)
+    data.append("Email",this.formGroup.get("Email").value)
+    data.append("Mobile",this.formGroup.get("Mobile").value)
+    data.append("State",this.formGroup.get("State").value)
+    data.append("BadgeType",this.formGroup.get("BadgeType").value)
+
+    this.group.addGroup(data).subscribe(
+      (res:any) => {
+        console.log(res)
+      },
+      err => {
+        console.log(err)
+      }
+    )
   }
 
 }

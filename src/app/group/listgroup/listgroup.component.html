@@ -1,1 +1,13 @@
-<p>listgroup works!</p>
+<div class="container">
+    <div class="row">
+        <table class="table tbale-bordered">
+            <tr *ngFor="let datas of data">
+                <td>{{ datas.GroupName }}</td>
+                <td><img [src]="getSanitizerUrl(datas.Photo)" width="100" height="200" class="img-fluid"></td>
+
+                <td><a [routerLink]="['/layout/group/editgroup/', datas.Id]">Edit</a></td>
+                <td><button type="submit" (click)="onDelete(datas.Id)">Delete</button></td>
+            </tr>
+        </table>
+    </div>
+</div>

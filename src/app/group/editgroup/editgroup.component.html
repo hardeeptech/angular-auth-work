@@ -1,1 +1,54 @@
-<p>editgroup works!</p>
+<div class="container">
+    <form #form='ngForm' (submit)="onsubmit()">
+        <div class="row">
+            <div class="form-group col-md-12">
+                <label for="State">Group Name</label>
+                <input type="text" #GroupName="ngModel" name="GroupName" [(ngModel)]="formModel.GroupName" class="form-control" required>
+                <div *ngIf="GroupName.invalid && (GroupName.touched || GroupName.dirty)">
+                    <div *ngIf="GroupName.errors.required">Enter Value</div>
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label for="State">State</label>
+                <input type="text" #State="ngModel" name="State" [(ngModel)]="formModel.State" class="form-control" required>
+                <div *ngIf="State.invalid && (State.touched || State.dirty)">
+                    <div *ngIf="State.errors.required">Enter Value</div>
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label for="Mobile">Mobile</label>
+                <input type="text" #Mobile="ngModel" name="Mobile" [(ngModel)]="formModel.Mobile" class="form-control" required>
+                <div *ngIf="Mobile.invalid && (Mobile.touched || Mobile.dirty)">
+                    <div *ngIf="Mobile.errors.required">Enter Value</div>
+                </div>
+            </div><div class="form-group col-md-12">
+                <label for="Email">Email</label>
+                <input type="text" #Email="ngModel" name="Email" [(ngModel)]="formModel.Email" class="form-control" required>
+                <div *ngIf="Email.invalid && (Email.touched || Email.dirty)">
+                    <div *ngIf="Email.errors.required">Enter Value</div>
+                </div>
+            </div><div class="form-group col-md-12">
+                <label for="BadgeId">BadgeId</label>
+                <input type="text" #BadgeId="ngModel" name="BadgeId" [(ngModel)]="formModel.BadgeId" class="form-control" required>
+                <div *ngIf="BadgeId.invalid && (BadgeId.touched || BadgeId.dirty)">
+                    <div *ngIf="BadgeId.errors.required">Enter Value</div>
+                </div>
+            </div><div class="form-group col-md-12">
+                <label for="BadgeType">BadgeType</label>
+                <input type="text" #BadgeType="ngModel" name="BadgeType" [(ngModel)]="formModel.BadgeType" class="form-control" required>
+                <div *ngIf="BadgeType.invalid && (BadgeType.touched || BadgeType.dirty)">
+                    <div *ngIf="BadgeType.errors.required">Enter Value</div>
+                </div>
+            </div><div class="form-group col-md-12">
+                <label for="Photo">Photo</label>
+                <input type="file" #Photo="ngModel" name="Photo" [(ngModel)]="formModel.Photo" class="form-control" required>
+                <div *ngIf="Photo.invalid && (Photo.touched || Photo.dirty)">
+                    <div *ngIf="Photo.errors.required">Enter Value</div>
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <button type="submit">Update</button>
+            </div>
+        </div>
+    </form>
+</div>

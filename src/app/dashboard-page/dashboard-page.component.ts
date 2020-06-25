@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JsService } from '../shared/js/js.service';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private js: JsService) { }
 
   ngOnInit(): void {
+    this.js.callJsClass()
   }
 
 }
